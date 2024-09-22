@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0218D1A4-06BD-4A60-9CED-E3371897AE1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ManufactureManage</RootNamespace>
+    <AssemblyName>ManufactureManage</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Apps.UIHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=74fbc55729e22a3e" />
+    <Reference Include="FrontendUI.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4df814adf3f91828" />
+    <Reference Include="GeneralControlLib">
+      <HintPath>..\..\..\2023-12\GeneralControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="HZH_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HZH_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VM.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61600122bc9264b9" />
+    <Reference Include="VMControls.BaseInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=14444b8df74b6e6a" />
+    <Reference Include="VMControls.Interface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cb41614600cf774b" />
+    <Reference Include="VMControls.RenderInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bcfc50547abbb24" />
+    <Reference Include="VMControls.Winform.Release, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2efa940dfee4dc7e, processorArchitecture=MSIL" />
+    <Reference Include="VMControls.WPF.Release, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fdd2c8be7291c30c" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellMonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellMonitorForm.Designer.cs">
+      <DependentUpon>CellMonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\ChartHelper.cs" />
+    <Compile Include="Config\DeviceConfig.cs" />
+    <Compile Include="Config\FactorySettings.cs" />
+    <Compile Include="Config\PictureBoxHelp.cs" />
+    <Compile Include="Config\PlcConfig.cs" />
+    <Compile Include="CreatePlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePlanForm.Designer.cs">
+      <DependentUpon>CreatePlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTaskForm.Designer.cs">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MySqlHelp.cs" />
+    <Compile Include="DataBase\SqlHelp.cs" />
+    <Compile Include="DataBase\TableInst.cs" />
+    <Compile Include="EachEquipments\CarrierTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EachEquipments\CarrierTestForm.Designer.cs">
+      <DependentUpon>CarrierTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EachEquipments\NptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EachEquipments\NptForm.Designer.cs">
+      <DependentUpon>NptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogSys\ExtendMethod.cs" />
+    <Compile Include="LogSys\LogMgr.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorForm3.Designer.cs">
+      <DependentUpon>MonitorForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PgrMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PgrMgrForm.Designer.cs">
+      <DependentUpon>PgrMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanMgrForm.Designer.cs">
+      <DependentUpon>PlanMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC\HuiChuan\HCdll.cs" />
+    <Compile Include="PLC\HuiChuan\HcType.cs" />
+    <Compile Include="PLC\HuiChuan\Inovance.cs" />
+    <Compile Include="PLC\IPlcCommOperate.cs" />
+    <Compile Include="PLC\IPlcFunBase.cs" />
+    <Compile Include="PLC\PlcOperate.cs" />
+    <Compile Include="ProcInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcInfoForm.Designer.cs">
+      <DependentUpon>ProcInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicCtrl\CellStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PublicCtrl\CellStatistics.Designer.cs">
+      <DependentUpon>CellStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicCtrl\EquipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PublicCtrl\EquipControl.Designer.cs">
+      <DependentUpon>EquipControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicCtrl\FlowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PublicCtrl\FlowControl.Designer.cs">
+      <DependentUpon>FlowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicCtrl\PlcMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PublicCtrl\PlcMonitor.Designer.cs">
+      <DependentUpon>PlcMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultCode.cs" />
+    <Compile Include="RunLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RunLogForm.Designer.cs">
+      <DependentUpon>RunLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPlanEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPlanEditForm.Designer.cs">
+      <DependentUpon>SelectPlanEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticsShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticsShowForm.Designer.cs">
+      <DependentUpon>StatisticsShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysMgr.cs" />
+    <Compile Include="TaskMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskMgrForm.Designer.cs">
+      <DependentUpon>TaskMgrForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CellMonitorForm.resx">
+      <DependentUpon>CellMonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePlanForm.resx">
+      <DependentUpon>CreatePlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTaskForm.resx">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EachEquipments\CarrierTestForm.resx">
+      <DependentUpon>CarrierTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EachEquipments\NptForm.resx">
+      <DependentUpon>NptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorForm3.resx">
+      <DependentUpon>MonitorForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PgrMgrForm.resx">
+      <DependentUpon>PgrMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanMgrForm.resx">
+      <DependentUpon>PlanMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcInfoForm.resx">
+      <DependentUpon>ProcInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicCtrl\CellStatistics.resx">
+      <DependentUpon>CellStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicCtrl\EquipControl.resx">
+      <DependentUpon>EquipControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicCtrl\FlowControl.resx">
+      <DependentUpon>FlowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicCtrl\PlcMonitor.resx">
+      <DependentUpon>PlcMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunLogForm.resx">
+      <DependentUpon>RunLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPlanEditForm.resx">
+      <DependentUpon>SelectPlanEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsShowForm.resx">
+      <DependentUpon>StatisticsShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskMgrForm.resx">
+      <DependentUpon>TaskMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\images\Bottom.jpg" />
+    <None Include="LogSys\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Blink.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Fault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Spare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Title.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Device\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Bottom%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\but.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
